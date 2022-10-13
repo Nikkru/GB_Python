@@ -22,31 +22,23 @@
 # else:
 #     print("incorrect value, sorry\n")
 
-# # lesson 1 task 2
+# lesson 1 task 2
 # N = int(input("enter an integer, please: "))
-# for i in range(-N, N + 1):
-#     print(i, end="; ")
+# print(list(range(-N, N+1)))
+'''
+for i in range(-N, N + 1):
+    print(i, end="; ")
+'''
 
 # # lesson 1 task 3
-try:
-    floatNum = float(input("enter a float number, please: "))
-    # print(floatNum)
-except:
-    print("incorrect value, sorry\n")
+# try:
+#     float_num = float(input("enter a float number, please: "))
+# except:
+#     print("incorrect value, sorry\n")
+# if int(float_num * 10 % 10) == 0:
+#     print("NO")
+# else: print(int(float_num * 10 % 10))
 
-str_float = str(floatNum)
-list_float = list(str_float)
-# print(list_float)
+# print(int(float_num * 10 % 10))
 
-i = 1
-number_after_point = ""
 
-while i < len(list_float):
-    if list_float[i] == '.':
-        # print(list_float[i + 1])
-        number_after_point = str(list_float[i + 1])
-    i += 1
-if number_after_point == "0":
-    print("No")
-else:
-    print(number_after_point)
