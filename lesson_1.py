@@ -30,15 +30,23 @@ for i in range(-N, N + 1):
     print(i, end="; ")
 '''
 
-# # lesson 1 task 3
+# lesson 1 task 3
+try:
+    float_num = float(input("enter a float number, please: "))
+    if (float_num % 1 != 0):
+        print(int(float_num * 10 % 10))
+    else:
+        print("NO")
+except:
+    print("incorrect value, sorry\n")
+
+
+# lesson 1 task 4
 # try:
-#     float_num = float(input("enter a float number, please: "))
+#  x = int(input("Enter an integer, please: "))
+#  if ((x % 5 == x % 10 == 0) or x % 15 == 0) and x % 30 != 0:
+#      print("x - our number\n")
+#  else:
+#      print("x - don't our number")
 # except:
-#     print("incorrect value, sorry\n")
-# if int(float_num * 10 % 10) == 0:
-#     print("NO")
-# else: print(int(float_num * 10 % 10))
-
-# print(int(float_num * 10 % 10))
-
-
+#     print("sorry, incorrect value was inputed")
