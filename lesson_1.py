@@ -1,3 +1,4 @@
+# # ## lesson 1 task 1
 # try:
 #     a = int(input("first number, please "))
 #     b = int(input("second number, please "))
@@ -8,7 +9,8 @@
 # except:
 #     print("incorrect input")
 
-weekends = [6, 7]
+# # homework 1 task 2
+# weekends = [6, 7]
 # weekdays = range(1, 8)
 # for i in weekdays:
 #     print(i, end=";")
@@ -20,6 +22,31 @@ weekends = [6, 7]
 # else:
 #     print("incorrect value, sorry\n")
 
-N = int(input("enter an integer, please: "))
-for i in range(-N, N + 1):
-    print(i, end="; ")
+# # lesson 1 task 2
+# N = int(input("enter an integer, please: "))
+# for i in range(-N, N + 1):
+#     print(i, end="; ")
+
+# # lesson 1 task 3
+try:
+    floatNum = float(input("enter a float number, please: "))
+    # print(floatNum)
+except:
+    print("incorrect value, sorry\n")
+
+str_float = str(floatNum)
+list_float = list(str_float)
+# print(list_float)
+
+i = 1
+number_after_point = ""
+
+while i < len(list_float):
+    if list_float[i] == '.':
+        # print(list_float[i + 1])
+        number_after_point = str(list_float[i + 1])
+    i += 1
+if number_after_point == "0":
+    print("No")
+else:
+    print(number_after_point)

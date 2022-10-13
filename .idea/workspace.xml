@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="home work 1 task 1 weekend">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="lesson 1 task 2">
       <change beforePath="$PROJECT_DIR$/lesson_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665655238260</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="lesson 1 task 2">
+      <created>1665658102639</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665658102639</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,7 +134,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="correct task 1 with try-except" />
     <MESSAGE value="home work 1 task 1 weekend" />
-    <option name="LAST_COMMIT_MESSAGE" value="home work 1 task 1 weekend" />
+    <MESSAGE value="lesson 1 task 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 1 task 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
