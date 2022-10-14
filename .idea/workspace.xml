@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="homework_1.py task 3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_1.py" afterDir="false" />
-    </list>
+    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="homework_1.py task 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665745321134</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="homework_1.py task 2">
+      <created>1665746398416</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665746398416</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,7 +186,8 @@
     <MESSAGE value="correct 2 lesson 1 task 3" />
     <MESSAGE value="homework_1.py task 1" />
     <MESSAGE value="homework_1.py task 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework_1.py task 3" />
+    <MESSAGE value="homework_1.py task 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework_1.py task 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

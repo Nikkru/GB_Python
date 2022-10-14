@@ -15,16 +15,6 @@
 # задача 2. Напишите программу для проверки истинности утверждения
 # ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 
-# !(X or Y or Z) = !X and !Y and !Z
-
-# a = 5
-# b = 6
-# res = a == b
-#
-# print(str(res))
-# for x in [True, False]:
-#   print(not(x or False or False) == True)
-
 for x in [True, False]:
     for y in [True, False]:
         for z in [True, False]:
