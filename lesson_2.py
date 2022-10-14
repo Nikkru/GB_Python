@@ -12,10 +12,23 @@
 
 # task 3
 
-M = {}
-n = int(input("enter a integer: "))
-for i in range(1, n+1):
-    M[i] = 3*i + 1
+# M = {}
+# n = int(input("enter a integer: "))
+# for i in range(1, n+1):
+#     M[i] = 3*i + 1
+#
+#     i += 1
+# print(M)
 
+# task 4
+
+str_1 = input("Wright some words here, please: ")
+str_2 = input("Wright some words here, please: ")
+list_1 = str_1.split()
+list_2 = str_2.split()
+count_repeat = 0
+for i in range(len(list_1)):
+    if list_1[i] in list_2:
+        count_repeat += 1
     i += 1
-print(M)
+print(count_repeat)
