@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="correct 2 lesson 1 task 3">
-      <change afterPath="$PROJECT_DIR$/homework_1.py" afterDir="false" />
+    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="homework_1.py task 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,13 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.lesson_1">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/venv" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="lesson_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GB_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,7 +145,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665671639378</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="homework_1.py task 1">
+      <created>1665673471240</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665673471240</updated>
+    </task>
+    <task id="LOCAL-00008" summary="homework_1.py task 3">
+      <created>1665745321134</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665745321134</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,7 +180,9 @@
     <MESSAGE value="lesson 1 task 3" />
     <MESSAGE value="correct lesson 1 task 3" />
     <MESSAGE value="correct 2 lesson 1 task 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct 2 lesson 1 task 3" />
+    <MESSAGE value="homework_1.py task 1" />
+    <MESSAGE value="homework_1.py task 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework_1.py task 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

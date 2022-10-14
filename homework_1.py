@@ -16,15 +16,21 @@
 # ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 
 # !(X or Y or Z) = !X and !Y and !Z
-'''
-a = 5
-b = 6
-res = a == b
 
-print(str(res))
+# a = 5
+# b = 6
+# res = a == b
+#
+# print(str(res))
+# for x in [True, False]:
+#   print(not(x or False or False) == True)
+
 for x in [True, False]:
-  print(not(x or False or False) == True)
-'''
+    for y in [True, False]:
+        for z in [True, False]:
+            if not (x or y or z) == (not x and not y and not z):
+                print('not ( ', x, ' or ', y, ' or ', z, ' == (not ', x,  ' and not ', y, ' and not ', z, ')')
+
 '''
 задача 3. 
 Напишите программу, которая принимает на вход координаты точки (X и Y), 
