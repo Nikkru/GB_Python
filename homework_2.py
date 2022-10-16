@@ -10,8 +10,10 @@ s = 0
 i = 1
 listN = []
 n = int(input("enter a number, please: "))
-while n % 10 > 1:
+while n / 10 > 0:
+    # n * 10
     s = s + n % 10
+    # print(s)
     n //= 10
 print(s)
 # n = float(input("enter a number, please: "))
