@@ -43,17 +43,32 @@
 '''
 - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 '''
-list_n = [1]
-list_N = []
-try:
-    N = int(input("enter a number, please: "))
-    for i in range(N):
-        i += 1
-        list_n.append(list_n[i - 1] * i)
-        list_N.append(list_n[-1])
-    print(list_N)
-except: print("Please, enter correct number!")
+# list_n = [1]
+# list_N = []
+# try:
+#     N = int(input("enter a number, please: "))
+#     for i in range(N):
+#         i += 1
+#         list_n.append(list_n[i - 1] * i)
+#         list_N.append(list_n[-1])
+#     print(list_N)
+# except:
+#     print("Please, enter integer")
 
 # Задача 3. Напишите программу, в которой пользователь будет задавать две строки,
 # а программа - определять количество вхождений одной строки в другой.
 # Нельзя юзать find или count.
+
+try:
+    str_1 = input("Wright some words here, please: ")
+    str_2 = input("Wright some words here, please: ")
+    list_1 = str_1.split()
+    list_2 = str_2.split()
+    count_repeat = 0
+    for i in range(len(list_1)):
+        if list_1[i] in list_2:
+            count_repeat += 1
+        i += 1
+    print(count_repeat)
+except:
+    print("Please, enter string!")
