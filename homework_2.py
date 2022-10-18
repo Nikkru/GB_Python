@@ -45,10 +45,15 @@
 '''
 list_n = [1]
 list_N = []
-N = int(input("enter a number, please: "))
-for i in range(N):
-    i += 1
-    list_n.append(list_n[i - 1] * i)
-    list_N.append(list_n[-1])
-print(list_N)
+try:
+    N = int(input("enter a number, please: "))
+    for i in range(N):
+        i += 1
+        list_n.append(list_n[i - 1] * i)
+        list_N.append(list_n[-1])
+    print(list_N)
+except: print("Please, enter correct number!")
 
+# Задача 3. Напишите программу, в которой пользователь будет задавать две строки,
+# а программа - определять количество вхождений одной строки в другой.
+# Нельзя юзать find или count.
