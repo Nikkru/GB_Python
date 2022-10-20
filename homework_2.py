@@ -13,26 +13,27 @@
 Понимаю, что надо бы все пригладить, но серое вещество на нуле.
 '''
 
-# sum_numbers_number = 0
-# number_decimal_places = 1
-# try:
-#     n = float(input("enter a number, please: "))
-#     fractional_part_n = n - int(n)
-#
-#     while n - round(n, number_decimal_places) != 0:
-#         number_decimal_places += 1
-#
-#     int_frac_n = round(fractional_part_n, number_decimal_places) * (10 ** number_decimal_places)
-#
-#     while int(n) > 0:
-#         sum_numbers_number = sum_numbers_number + n % 10
-#         n //= 10
-#
-#     while int(int_frac_n) > 0:
-#         sum_numbers_number = sum_numbers_number + int_frac_n % 10
-#         int_frac_n //= 10
-#     print(int(sum_numbers_number))
-# except: print("Please, enter correct number!")
+sum_numbers_number = 0
+number_decimal_places = 1
+try:
+    n = float(input("enter a number, please: "))
+    fractional_part_n = n - int(n)
+
+    while n - round(n, number_decimal_places) != 0:
+        number_decimal_places += 1
+
+    int_frac_n = round(fractional_part_n, number_decimal_places) * (10 ** number_decimal_places)
+
+    while int(n) > 0:
+        sum_numbers_number = sum_numbers_number + n % 10
+        n //= 10
+
+    while int(int_frac_n) > 0:
+        sum_numbers_number = sum_numbers_number + int_frac_n % 10
+        int_frac_n //= 10
+    print(int(sum_numbers_number))
+except:
+    print("Please, enter correct number!")
 
 
 
@@ -59,16 +60,16 @@
 # а программа - определять количество вхождений одной строки в другой.
 # Нельзя юзать find или count.
 
-try:
-    str_1 = input("Wright some words here, please: ")
-    str_2 = input("Wright some words here, please: ")
-    list_1 = str_1.split()
-    list_2 = str_2.split()
-    count_repeat = 0
-    for i in range(len(list_1)):
-        if list_1[i] in list_2:
-            count_repeat += 1
-        i += 1
-    print(count_repeat)
-except:
-    print("Please, enter string!")
+# try:
+#     str_1 = input("Wright some words here, please: ")
+#     str_2 = input("Wright some words here, please: ")
+#     list_1 = str_1.split()
+#     list_2 = str_2.split()
+#     count_repeat = 0
+#     for i in range(len(list_1)):
+#         if list_1[i] in list_2:
+#             count_repeat += 1
+#         i += 1
+#     print(count_repeat)
+# except:
+#     print("Please, enter string!")
