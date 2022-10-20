@@ -33,14 +33,62 @@
 - [2, 3, 4, 5, 6] => [12, 15, 16];
 - [2, 3, 5, 6] => [12, 15]
 '''
-list_N = [2, 3, 4, 10, 11, 12, 13]
+# list_N = [2, 3, 4, 10, 11, 12, 13]
+#
+# def list_sum(list_n):
+#     list_sum = []
+#     sum = 0
+#     for i in range(int(len(list_n)/2)):
+#         sum = list_n[i] + list_n[-1*(i+1)]
+#         list_sum.append(sum)
+#     print(list_sum)
+#
+# list_sum(list_N)
 
-def list_sum(list_n):
-    list_sum = []
-    sum = 0
-    for i in range(int(len(list_n)/2)):
-        sum = list_n[i] + list_n[-1*(i+1)]
-        list_sum.append(sum)
-    print(list_sum)
+# Задача 3.
+# Задайте список из вещественных чисел.
+# Напишите программу, которая найдёт разницу между максимальным и
+# минимальным значением дробной части элементов.
+'''
+*Пример:*
 
-list_sum(list_N)
+- [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+'''
+list_N = [1.1, 1.2, 3.1, 5, 10.01, 0.0002]
+
+def subtraction_max_min_fractional(list_n):
+    list_tmp = []
+    list_tmp_char = []
+    list_int = []
+    maximum = 0
+    minimum = 0
+    for i in range(len(list_n)):
+        list_tmp.append(str(list_n[i]))
+        list_tmp_char.append(list(list_tmp[i]))
+    for j in range(len(list_n)):
+       if '.' in list_tmp[j]:
+           index = list_tmp[j].index('.')
+           del list_tmp_char[j][:index+1]
+       else:
+           list_tmp_char[j] = ['0']
+           index = 0
+    maximum = len(list_tmp_char[0])
+    for x in list_tmp_char:
+        if len(x) > maximum:
+            maximum = len(x)
+    for x in list_tmp_char:
+        while len(x) != maximum:
+            x.append('0')
+        list_int.append(int(''.join(x)))
+    maximum = list_int[0]
+    minimum = list_int[-1]
+    for x in list_int:
+        if x > maximum:
+            maximum = x
+    for x in list_int:
+        if 0 < x < minimum:
+            minimum = x
+    resultat = f'0,{maximum - minimum}'
+    print(resultat)
+
+subtraction_max_min_fractional(list_N)
