@@ -33,21 +33,24 @@
 
 # task 3
 
-list_A = ["abc", "bce", "abced", "abcd", "abcde", "abc"]
+# list_A = ["abc", "bce", "abced", "abcd", "abcde", "abc"]
 
-def looking_for_string(N, list_N):
-    count = 0
-    position = 0
-    for i in range(len(list_N)):
-        if list_N[i] == N and count == 0:
-            count = 1
-        elif list_N[i] == N and count == 1:
-            position = i
-            count = 2
-    if count == 2:
-        print(f'{N} incoming in list {list_N} with {position} position')
-    else:
-        print("-1")
+# def looking_for_string(N, list_N):
+#     count = 0
+#     position = 0
+#     for i in range(len(list_N)):
+#         if list_N[i] == N and count == 0:
+#             count = 1
+#         elif list_N[i] == N and count == 1:
+#             position = i
+#             count = 2
+#     if count == 2:
+#         print(f'{N} incoming in list {list_N} with {position} position')
+#     else:
+#         print("-1")
+#
+# n = input("enter some string: ")
+# looking_for_string(n, list_A)
 
-n = input("enter some string: ")
-looking_for_string(n, list_A)
+
+
