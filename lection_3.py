@@ -31,7 +31,8 @@ print(list_string)
 
 # res = select(int, list_string)
 res = map(int, list_string)
-res = where(lambda x: not x%2, res)
+# res = where(lambda x: not x%2, res)
+res = list(filter(lambda x: not x%2, res))
 # res = select(lambda x: (x, x**2), res)
 res = list(map(lambda x: (x, x**2), res))
 print(res)
@@ -47,3 +48,7 @@ print(res)
 data_2 = map(int, '1 2 3 44 55 6'.split())
 for e in data_2: # итератор - можно сделать итерацию только один раз!
     print(e)
+
+data_3 = [x for x in range(1, 10)]
+res = list(filter(lambda x: not x%2, data_3))
+print(res)
