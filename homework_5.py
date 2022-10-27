@@ -74,46 +74,62 @@
 # реализуйте модуль сжатия и восстановления данных (здесь только буквы).
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
 
-reading_file = "hw5task2.txt"
-writing_file = "hw5task2_write.txt"
-def write_file(W,R):
-    with open(W, 'w') as data:
-        data.write(R)
-def read_file(N):
-    with open(N, 'r') as N:
-        for line in N:
-            return line
+# reading_file = "hw5task2.txt"
+# writing_file = "hw5task2_write.txt"
+# def write_file(W,R):
+#     with open(W, 'w') as data:
+#         data.write(R)
+# def read_file(N):
+#     with open(N, 'r') as N:
+#         for line in N:
+#             return line
+#
+# def rle_encode(string_a):
+#     str_encode = ''
+#     count = 1
+#     char = string_a[0]
+#     for i in range(1, len(string_a)):
+#         if string_a[i] == char:
+#             count += 1
+#         else:
+#             str_encode += str(count)+char
+#             char = string_a[i]
+#             count = 1
+#             str_encode += str(count)+char
+#     # print(str_encode)
+#     return str_encode
+#
+# def rle_decode(str_encode):
+#     decode_str = ''
+#     char_len =''
+#     for i in range(len(str_encode)):
+#         if decode_str[i].isdigit():
+#             char_len += str_encode[i]
+#         else:
+#             decode_str += str_encode[i] * int(char_len)
+#         char_len = ''
+#     # print(decode_str)
+#     return decode_str
+#
+# string_for_encode = read_file(reading_file)
+# string_encoded = rle_encode(string_for_encode)
+# write_file(writing_file, string_encoded)
+#
+# print(f'text for encode - {string_for_encode}')
+# print(f'text encoded - {string_encoded}')
 
-def rle_encode(string_a):
-    str_encode = ''
-    count = 1
-    char = string_a[0]
-    for i in range(1, len(string_a)):
-        if string_a[i] == char:
-            count += 1
-        else:
-            str_encode += str(count)+char
-            char = string_a[i]
-            count = 1
-            str_encode += str(count)+char
-    # print(str_encode)
-    return str_encode
+# задача 3.
+# Напишите программу,
+# удаляющую из текста все слова,
+# содержащие "абв".
+# Функции FIND и COUNT юзать нельзя.
 
-def rle_decode(str_encode):
-    decode_str = ''
-    char_len =''
-    for i in range(len(str_encode)):
-        if decode_str[i].isdigit():
-            char_len += str_encode[i]
-        else:
-            decode_str += str_encode[i] * int(char_len)
-        char_len = ''
-    # print(decode_str)
-    return decode_str
+first_str = "любовь абв к трем абв апельсинам"
+deleted_str = "абв"
 
-string_for_encode = read_file(reading_file)
-string_encoded = rle_encode(string_for_encode)
-write_file(writing_file, string_encoded)
+def delete_from_text(text, delete):
+    tmp = [i for i in text.split() if delete not in i]
+    return f'{" ".join(tmp)}'
+print(first_str)
+print(delete_from_text(first_str,deleted_str))
 
-print(f'text for encode - {string_for_encode}')
-print(f'text encoded - {string_encoded}')
