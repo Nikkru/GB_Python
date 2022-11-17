@@ -1,10 +1,10 @@
-import  random
+import random
 
 field = []
 
 for i in range(3):
     field_row = []
-    for j in range (3):
+    for j in range(3):
         field_row.append('_')
     field.append(field_row)
 
@@ -48,10 +48,14 @@ print_field(field)
 for m in range(9):
     if m % 2 == 0:
         field = player_move(field)
-        if check_win(field) is True: print('You are winner')
+        if check_win(field):
+            print('You are winner')
+            break
     else:
         field = comp_move(field)
-        if check_win(field) is True: print('You are looser')
+        if check_win(field):
+            print('You are looser')
+            break
     print_field(field)
 
 
