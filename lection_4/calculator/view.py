@@ -3,8 +3,8 @@
 """
 
 
-def view_data(data):
-    print(f'result = {data}')
+def view_data(data, title):
+    print(f'{title} = {data}')
 
 
 def get_value():

@@ -12,5 +12,5 @@ def init(a, b):
     y = b
 
 
-def sum():
+def calculation():
     return x + y

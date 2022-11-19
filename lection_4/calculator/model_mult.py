@@ -12,5 +12,5 @@ def init(a, b):
     y = b
 
 
-def mult():
+def calculation():
     return x * y
