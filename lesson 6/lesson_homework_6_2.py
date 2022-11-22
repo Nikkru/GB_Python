@@ -46,7 +46,7 @@ def division_operation(string_expression):
         pos = string_expression.index("/")
         b = previous_digit(string_expression, pos)
         f = next_digit(string_expression, pos)
-        result = float(previous_digit(string_expression, pos)) / float(next_digit(string_expression, pos))
+        result = float(b) / float(f)
         string_expression = string_expression[:pos - len(b)] + str(result) + string_expression[pos + 1 + len(f):]
     return string_expression
 
@@ -134,7 +134,7 @@ def is_bracket_ok(string_expression):
             temp_count += 1
         if string_expression[i] == ')':
             temp_count -= 1
-        if temp_count<0:
+        if temp_count < 0:
             return temp_count
     return temp_count
 

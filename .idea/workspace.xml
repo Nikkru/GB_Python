@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="" />
+    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="lection 4&#10;calculator done">
+      <change afterPath="$PROJECT_DIR$/lection_4/take_data/data_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lection_4/take_data/html_creater.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lection_4/take_data/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lection_4/take_data/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lection_4/take_data/user_interface.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lection_4/take_data/xml_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson 6/lesson_homework_6_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson 6/lesson_homework_6_2.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,15 +23,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FzsyowHLUf3eCbOgx4gfn3uhjz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="Python.lesson_1">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lection_4/take_data" />
+      <recent name="$PROJECT_DIR$/lesson 6" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="lesson_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GB_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,7 +100,62 @@
       <option name="presentableId" value="Default" />
       <updated>1665506503948</updated>
     </task>
+    <task id="LOCAL-00001" summary="homework_6.py Task 1 крестики - нолики">
+      <created>1668698336611</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668698336611</updated>
+    </task>
+    <task id="LOCAL-00002" summary="homework_6.py Task 1 крестики - нолики fix error">
+      <created>1668699100056</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668699100056</updated>
+    </task>
+    <task id="LOCAL-00003" summary="homework_6.py Task 2 вычисления арифметического выражения заданного строкой">
+      <created>1668707632676</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668707632676</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lection 4&#10;first step with calculator">
+      <created>1668798617035</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668798617035</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lection 4&#10;calculator done">
+      <created>1668877715509</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668877715509</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="homework_6.py Task 1 крестики - нолики" />
+    <MESSAGE value="homework_6.py Task 1 крестики - нолики fix error" />
+    <MESSAGE value="homework_6.py Task 2 вычисления арифметического выражения заданного строкой" />
+    <MESSAGE value="lection 4&#10;first step with calculator" />
+    <MESSAGE value="lection 4&#10;calculator done" />
+    <option name="LAST_COMMIT_MESSAGE" value="lection 4&#10;calculator done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
