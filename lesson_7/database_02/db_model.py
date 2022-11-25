@@ -91,15 +91,16 @@ def append_to_csv(last_id, data_new_employee):
     employees.append(temp)
     write_csv(employees)
 
-def add_new_person(last_id, database):
+def add_new_person(last_id, new_person, database):
     temp = {}
+    key_ = new_person['first_name'] + ' ' + new_person['last_name']
     temp["id"] = last_id + 1
-    temp["last_name"] = temp[0]["last_name"]
-    temp["first_name"] = temp[0]["first_name"]
-    temp["position"] = temp[0]["position"]
-    temp["phone_number"] = temp[0]["phone_number"]
-    temp["salary"] = temp[0]["salary"]
-    database.append(temp)
+    temp["last_name"] = new_person[0]["last_name"]
+    temp["first_name"] = new_person[0]["first_name"]
+    temp["position"] = new_person[0]["position"]
+    temp["phone_number"] = new_person[0]["phone_number"]
+    temp["salary"] = new_person[0]["salary"]
+    database.update({key_: temp})
 
 
 def add_to_database_json(json_file, data):
