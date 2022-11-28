@@ -1,6 +1,8 @@
 import csv
 import json
 
+is_db = {}
+
 
 def read_csv() -> list:
     employees = []
@@ -91,6 +93,7 @@ def append_to_csv(last_id, data_new_employee):
     employees.append(temp)
     write_csv(employees)
 
+
 def add_new_person(last_id, new_person, database):
     temp = {}
     key_ = new_person['first_name'] + ' ' + new_person['last_name']
@@ -105,7 +108,7 @@ def add_new_person(last_id, new_person, database):
 
 def add_to_database_json(json_file, data):
     with open(json_file, 'w') as file:
-        json.dump(data, file)
+        json.dump(data, file, indent=3)
 
 
 def write_json(employees: list):
@@ -131,4 +134,4 @@ def json_file_read(json_data):
 
 def json_file_write(data, json_data):
     with open(json_data, 'w') as file:
-        json.dump(data, file)
+        json.dump(data, file, indent=3)

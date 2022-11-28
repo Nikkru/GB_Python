@@ -2,7 +2,9 @@ import db_model as model
 import db_view as view
 
 employees = model.read_csv()
-db_base = model.json_file_read('database.json')
+# db_base = model.json_file_read('database.json')
+db_base = {}
+
 
 def start_menu():
     while True:
@@ -23,6 +25,7 @@ def start_menu():
         elif mode == 4:
             data_new_empl = view.get_add_new_employee()
             model.append_to_csv(model.get_last_id(), data_new_empl)
+            db_base.update(data_new_empl)
             model.json_file_write(db_base, 'database.json')
         elif mode == 5:
             last_name_empl = view.get_search_empl("фамилию")
