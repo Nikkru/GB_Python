@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="homework 7&#10;database_02&#10;add_new_person()">
-      <change afterPath="$PROJECT_DIR$/lesson_7/test/controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson_7/test/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson_7/test/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson_7/test/view.py" afterDir="false" />
+    <list default="true" id="0e7f7c3e-85b3-467e-9a4e-d816433833cc" name="Changes" comment="homework 9&#10;telegram bot&#10;загрузить афишу и показать афишу">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson_7/database_02/database.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_7/database_02/database.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson_7/database_02/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_7/database_02/database.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson_7/database_02/db_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_7/database_02/db_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson_7/database_02/db_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_7/database_02/db_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson_7/homework_7/is_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_7/homework_7/is_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson_8/telegram_bot_telebot/tg_gb_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_8/telegram_bot_telebot/tg_gb_bot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +162,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669393070297</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="homework 7&#10;test project &#10;new version of infomation system">
+      <created>1669645791395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669645791395</updated>
+    </task>
+    <task id="LOCAL-00011" summary="homework 9&#10;telegram bot&#10;загрузить афишу и показать афишу">
+      <created>1669666958280</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669666958280</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,7 +200,9 @@
     <MESSAGE value="lection к&#10;telegram-bot&#10;nobody_but_mine_bot" />
     <MESSAGE value="homework 7&#10;database_02&#10;in progress" />
     <MESSAGE value="homework 7&#10;database_02&#10;add_new_person()" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework 7&#10;database_02&#10;add_new_person()" />
+    <MESSAGE value="homework 7&#10;test project &#10;new version of infomation system" />
+    <MESSAGE value="homework 9&#10;telegram bot&#10;загрузить афишу и показать афишу" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 9&#10;telegram bot&#10;загрузить афишу и показать афишу" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
