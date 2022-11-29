@@ -1,11 +1,13 @@
 import telebot
-import bot_commands as bc
 import data_model as dm
 import requests
+import json
 
-API_URL = "https://7012.deeppavlov.ai/model"
+API_URL_WIKI = "https://7012.deeppavlov.ai/model"
+API_URL_ARTNEWS = "https://daily.afisha.ru/news/"
+API_URL_NUMBERS = "http://numbersapi.com/"
 
-API_TOKEN = '5725232496:AAFZIIWs1Pd9GJE0CE-pr_iIqnRlbIEnsQY'
+API_TOKEN = 'Апи ключ, который вы получили у BotFather'
 bot = telebot.TeleBot(API_TOKEN)
 
 # декоратор
@@ -37,7 +39,26 @@ def wiki(message):
     quest = message.text.split()[1:]
     # print(message)message
     data = {'question_raw': quest}
-    res = requests.post(API_URL, json=data, verify=False).json()
+    res = requests.post(API_URL_WIKI, json=data, verify=False).json()
     bot.send_message(message.chat.id, res)
+
+
+@bot.message_handler(commands=['number'])
+def number(message):
+    quest = message.text.split()[1:]
+    print(quest)
+    data = {'text': quest}
+    res = requests.get(API_URL_NUMBERS, json=data, verify=False).json()
+    bot.send_message(message.chat.id, res)
+
+
+@bot.message_handler(regexp='[0-9]+')
+def numbers(message):
+    # quest = message.text.split()[1:]
+    # data = {'text': quest}
+    answer = requests.get(f'http://numbersapi.com/{message.text}?json')
+    # res = requests.get(f'http://numbersapi.com/{message.text}?json', json=data, verify=False).json()
+    # bot.send_message(message.chat.id, res)
+    bot.send_message(message.chat.id, json.loads(answer.text)['text'])
 
 bot.polling()
