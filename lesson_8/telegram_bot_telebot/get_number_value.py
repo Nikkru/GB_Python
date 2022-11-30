@@ -2,12 +2,15 @@ import telebot
 import data_model as dm
 import requests
 import json
+from client_kb import kb_client
+from constants import TOKEN
 
 API_URL_WIKI = "https://7012.deeppavlov.ai/model"
 API_URL_ARTNEWS = "https://daily.afisha.ru/news/"
 API_URL_NUMBERS = "http://numbersapi.com/"
 
-API_TOKEN = 'Апи ключ, который вы получили у BotFather'
+# API_TOKEN = 'Апи ключ, который вы получили у BotFather'
+API_TOKEN = TOKEN
 bot = telebot.TeleBot(API_TOKEN)
 
 # декоратор
