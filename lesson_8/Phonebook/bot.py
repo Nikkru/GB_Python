@@ -127,8 +127,10 @@ def start_message(message):
 def menu(message):
     if message.text == "Показать все контакты":
         print(phonebook_dict)
-        for x, y in phonebook_dict.items():
-            bot.send_message(message.chat.id, f'{x}: {y}')
+        keys_phonebook = sorted(phonebook_dict)
+        print(keys_phonebook)
+        for x in keys_phonebook:
+            bot.send_message(message.chat.id, f'{x}: {phonebook_dict[x]}')
     elif message.text == "Найти контакт":
         markup_1 = types.InlineKeyboardMarkup(row_width=1)
         but1 = types.InlineKeyboardButton("Найти по фамилии", callback_data='text1')
@@ -172,13 +174,22 @@ def callback_inline(call):
         msg = bot.send_message(call.message.chat.id, "Укажите номер контакта:")
         bot.register_next_step_handler(msg, del_num_contact)
 
+def get_key(dictonary_):
+    keys = sorted(dictonary_)
+    n = 0
+    print('\n')
+    for key in keys:
+        n += 1
+        print(f'{n}. {key}')
+
 
 @bot.message_handler(commands=['show_all'])
 def show_message(message):
     print(phonebook_dict)
-    for x, y in phonebook_dict.items():
-        bot.send_message(message.chat.id, f'{x}: {y}')
-    # bot.send_message(message.chat.id, " ".join(phonebook_dict))
+    keys_phonebook = sorted(phonebook_dict)
+    print(keys_phonebook)
+    for x in keys_phonebook:
+        bot.send_message(message.chat.id, f'{x}: {phonebook_dict[x]}')
 
 
 bot.polling()
