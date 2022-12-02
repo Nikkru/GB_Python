@@ -18,27 +18,42 @@ keyboard.row(key[2], key[3])
 API_TOKEN = TOKEN
 
 bot = telebot.TeleBot(API_TOKEN)
-
-calc = False
-
-
-def send(id, text):
-    bot.send_message(id, text, reply_markup=keyboard)
-
 phonebook_dict = {}
+db_is_loaded = False
+
+
+def send(id_, text):
+    bot.send_message(id_, text, reply_markup=keyboard)
 
 
 def save():
-    with open("phonebook.json", "w", encoding="utf-8") as fh:
-        fh.write(json.dumps(phonebook_dict, ensure_ascii=False))
-    print("Файл phonebook.json обновлен.")
+    global phonebook_dict
+    global db_is_loaded
+    if db_is_loaded:
+        with open("phonebook.json", "w", encoding="utf-8") as fh:
+            fh.write(json.dumps(phonebook_dict, ensure_ascii=False))
+        print("Файл phonebook.json обновлен.")
+    else:
+        temp_dict_without_bd = {}
+        temp_dict_without_bd.update(phonebook_dict)
+        with open("phonebook.json", "r", encoding="utf-8") as fh:
+            temp_dict = json.load(fh)
+        phonebook_dict.update(temp_dict)
+        with open("phonebook.json", "w", encoding="utf-8") as fh:
+            fh.write(json.dumps(phonebook_dict, ensure_ascii=False))
+        print("Файл phonebook.json обновлен.")
+        print(phonebook_dict)
+        phonebook_dict = temp_dict_without_bd
+        print(phonebook_dict)
 
 
 def load():
     global phonebook_dict
+    global db_is_loaded
     with open("phonebook.json", "r", encoding="utf-8") as fh:
-        phonebook_dict = json.load(fh)
-    print("Фильмотека была успешно загружена")
+        dict_temp = json.load(fh)
+    phonebook_dict.update(dict_temp)
+    db_is_loaded = True
 
 
 def search_contact(phone_num: int):
@@ -77,9 +92,7 @@ def add_new_contact(message):
             phonebook_dict[quest[0]] = []
             for i in range(len(quest)):
                 if i > 0:
-                    # phonebook_dict[quest[0]].append(int(quest[i]))
                     phonebook_dict.update({quest[0]: quest[i]})
-                    # phonebook_dict[quest[0]] = int(quest[i])
                     print(phonebook_dict)
             save()
             bot.send_message(message.chat.id, 'Контакт добавлен в телефонную книгу!')
