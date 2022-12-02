@@ -25,28 +25,36 @@ calc = False
 def send(id, text):
     bot.send_message(id, text, reply_markup=keyboard)
 
-films = []
 phonebook_dict = {}
 
 
 def save():
-    with open("films.json", "w", encoding="utf-8") as fh:
-        fh.write(json.dumps(films, ensure_ascii=False))
-    print("Наша фильмотека была успешно сохранена в файле films.json")
+    with open("phonebook.json", "w", encoding="utf-8") as fh:
+        fh.write(json.dumps(phonebook_dict, ensure_ascii=False))
+    print("Файл phonebook.json обновлен.")
 
 
 def load():
-    global films
+    global phonebook_dict
     with open("phonebook.json", "r", encoding="utf-8") as fh:
-        global phonebook_dict
         phonebook_dict = json.load(fh)
     print("Фильмотека была успешно загружена")
+
+
+def search_contact(phone_num: int):
+    global phonebook_dict
+    with open("book.json", "r", encoding="utf-8") as fh:
+        for key, value in phonebook_dict.items():
+            for k in value:
+                if k == phone_num:
+                    return key
+
 
 def show_name(message):
     global phonebook_dict
     quest = message.text
     bot.send_message(message.chat.id, f'{quest}: {phonebook_dict.get(quest)}')
-    if phonebook_dict.get(quest)==None:
+    if phonebook_dict.get(quest) == None:
         bot.send_message(message.chat.id, 'Такого контакта нет в телефонном справочнике!')
 
 
@@ -61,14 +69,18 @@ def show_number(message):
 def add_new_contact(message):
     global phonebook_dict
     quest = message.text.split()
+    print(quest)
     if quest == [] or len(quest) < 2:
         bot.send_message(message.chat.id, 'Информация введена не полностью. Попробуйте еще раз!')
     else:
-        if len(quest) > 2:
+        if len(quest) > 1:
             phonebook_dict[quest[0]] = []
             for i in range(len(quest)):
                 if i > 0:
-                    phonebook_dict[quest[0]].append(int(quest[i]))
+                    # phonebook_dict[quest[0]].append(int(quest[i]))
+                    phonebook_dict.update({quest[0]: quest[i]})
+                    # phonebook_dict[quest[0]] = int(quest[i])
+                    print(phonebook_dict)
             save()
             bot.send_message(message.chat.id, 'Контакт добавлен в телефонную книгу!')
 
@@ -98,46 +110,58 @@ def start_message(message):
     try:
         load()
         bot.send_message(message.chat.id, "Информация успешно загружена!")
-
     except:
         bot.send_message(message.chat.id, "Упс! Телефонная книга пуста!")
 
+
 @bot.message_handler(func=lambda message: True)
 def menu(message):
-     if message.text == "Показать все контакты":
-         print(phonebook_dict)
-         for x, y in phonebook_dict.items():
-             bot.send_message(message.chat.id, f'{x}: {y}')
-     elif message.text == "Найти контакт":
-         markup_1 = types.InlineKeyboardMarkup(row_width=1)
-         but1 = types.InlineKeyboardButton("Найти по фамилии", callback_data='text1')
-         but2 = types.InlineKeyboardButton("Найти по номеру телефона", callback_data='text2')
-         markup_1.add(but1, but2)
-         bot.send_message(chat_id=message.chat.id, text="Выбери, каким способом искать:", reply_markup=markup_1)
-     elif message.text == "Добавить контакт":
+    if message.text == "Показать все контакты":
+        print(phonebook_dict)
+        for x, y in phonebook_dict.items():
+            bot.send_message(message.chat.id, f'{x}: {y}')
+    elif message.text == "Найти контакт":
+        markup_1 = types.InlineKeyboardMarkup(row_width=1)
+        but1 = types.InlineKeyboardButton("Найти по фамилии", callback_data='text1')
+        but2 = types.InlineKeyboardButton("Найти по номеру телефона", callback_data='text2')
+        markup_1.add(but1, but2)
+        bot.send_message(chat_id=message.chat.id,
+                         text="Выбери, каким способом искать:",
+                         reply_markup=markup_1)
+    elif message.text == "Добавить контакт":
         markup_2 = types.InlineKeyboardMarkup(row_width=1)
         but1 = types.InlineKeyboardButton("Добавить данные", callback_data='new')
         markup_2.add(but1)
-        bot.send_message(chat_id=message.chat.id, text="Введите данные нового контакта:", reply_markup=markup_2)
+        bot.send_message(chat_id=message.chat.id,
+                         text="Введите данные нового контакта:",
+                         reply_markup=markup_2)
+    elif message.text == "Удалить контакт":
+        markup_3 = types.InlineKeyboardMarkup(row_width=1)
+        but1 = types.InlineKeyboardButton("Удалить все данные контакта", callback_data='del')
+        but2 = types.InlineKeyboardButton("Удалить номер телефона контакта", callback_data='del_num')
+        markup_3.add(but1, but2)
+        bot.send_message(chat_id=message.chat.id,
+                         text="Выберите какие данные нужно удалить:",
+                         reply_markup=markup_3)
 
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
-            if call.data == 'text1':
-                msg = bot.send_message(call.message.chat.id, "Введите фамилию: ")
-                bot.register_next_step_handler(msg, show_name)
-            elif call.data == 'text2':
-                msg = bot.send_message(call.message.chat.id, "Введите номер телефона: ")
-                bot.register_next_step_handler(msg, show_number)
-            elif call.data == 'new':
-                msg = bot.send_message(call.message.chat.id, "Укажите фамилию и номера телефонов через пробел!")
-                bot.register_next_step_handler(msg, add_new_contact)
-            elif call.data == 'del':
-                msg = bot.send_message(call.message.chat.id, "Укажите фамилию контакта:")
-                bot.register_next_step_handler(msg, del_contact)
-            elif call.data == 'del_num':
-                msg = bot.send_message(call.message.chat.id, "Укажите номер контакта:")
-                bot.register_next_step_handler(msg, del_num_contact)
+    if call.data == 'text1':
+        msg = bot.send_message(call.message.chat.id, "Введите фамилию: ")
+        bot.register_next_step_handler(msg, show_name)
+    elif call.data == 'text2':
+        msg = bot.send_message(call.message.chat.id, "Введите номер телефона: ")
+        bot.register_next_step_handler(msg, show_number)
+    elif call.data == 'new':
+        msg = bot.send_message(call.message.chat.id, "Укажите фамилию и номера телефонов через пробел!")
+        bot.register_next_step_handler(msg, add_new_contact)
+    elif call.data == 'del':
+        msg = bot.send_message(call.message.chat.id, "Укажите фамилию контакта:")
+        bot.register_next_step_handler(msg, del_contact)
+    elif call.data == 'del_num':
+        msg = bot.send_message(call.message.chat.id, "Укажите номер контакта:")
+        bot.register_next_step_handler(msg, del_num_contact)
 
 
 @bot.message_handler(commands=['show_all'])
@@ -146,25 +170,6 @@ def show_message(message):
     for x, y in phonebook_dict.items():
         bot.send_message(message.chat.id, f'{x}: {y}')
     # bot.send_message(message.chat.id, " ".join(phonebook_dict))
-
-
-@bot.message_handler(commands=['calc'])
-def calc_message(message):
-    global calc
-    # eq = message.text.split()[1:]   #список из одного элемента
-    # print(eq)
-    calc = True
-    bot.send_message(message.chat.id, "А теперь введите выражение")
-
-
-@bot.message_handler(content_types='text')
-def message_reply(message):
-    global calc
-    if 'привет' in message.text:
-        bot.send_message(message.chat.id, 'и тебе привет')
-    if calc:
-        bot.send_message(message.chat.id, eval(message.text))
-        calc = False
 
 
 bot.polling()
