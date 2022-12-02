@@ -4,16 +4,12 @@ import json
 from config import TOKEN
 
 keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-key = {}
-key[0] = types.KeyboardButton("Показать все контакты")
-key[1] = types.KeyboardButton("Найти контакт")
-key[2] = types.KeyboardButton("Добавить контакт")
-key[3] = types.KeyboardButton("Удалить контакт")
+key = {0: types.KeyboardButton("Показать все контакты"),
+       1: types.KeyboardButton("Найти контакт"),
+       2: types.KeyboardButton("Добавить контакт"),
+       3: types.KeyboardButton("Удалить контакт")}
 keyboard.row(key[0], key[1])
 keyboard.row(key[2], key[3])
-
-# keyboard.row('/show_all', 'Hi!')
-# keyboard.row('see you later')
 
 API_TOKEN = TOKEN
 
@@ -92,7 +88,7 @@ def add_new_contact(message):
             phonebook_dict[quest[0]] = []
             for i in range(len(quest)):
                 if i > 0:
-                    phonebook_dict.update({quest[0]: quest[i]})
+                    phonebook_dict.update({quest[0]: int(quest[i])})
                     print(phonebook_dict)
             save()
             bot.send_message(message.chat.id, 'Контакт добавлен в телефонную книгу!')
