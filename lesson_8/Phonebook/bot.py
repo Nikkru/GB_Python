@@ -65,15 +65,15 @@ def show_name(message):
     global phonebook_dict
     quest = message.text
     bot.send_message(message.chat.id, f'{quest}: {phonebook_dict.get(quest)}')
-    if phonebook_dict.get(quest) == None:
+    if phonebook_dict.get(quest) is None:
         bot.send_message(message.chat.id, 'Такого контакта нет в телефонном справочнике!')
 
 
 def show_number(message):
     quest = int(message.text)
-    key = search_contact(quest)
-    bot.send_message(message.chat.id, f'{key}: {quest}')
-    if key == None:
+    key_ = search_contact(quest)
+    bot.send_message(message.chat.id, f'{key_}: {quest}')
+    if key_ is None:
         bot.send_message(message.chat.id, 'Такого номера нет в телефонном справочнике!')
 
 
@@ -173,23 +173,6 @@ def callback_inline(call):
     elif call.data == 'del_num':
         msg = bot.send_message(call.message.chat.id, "Укажите номер контакта:")
         bot.register_next_step_handler(msg, del_num_contact)
-
-def get_key(dictonary_):
-    keys = sorted(dictonary_)
-    n = 0
-    print('\n')
-    for key in keys:
-        n += 1
-        print(f'{n}. {key}')
-
-
-@bot.message_handler(commands=['show_all'])
-def show_message(message):
-    print(phonebook_dict)
-    keys_phonebook = sorted(phonebook_dict)
-    print(keys_phonebook)
-    for x in keys_phonebook:
-        bot.send_message(message.chat.id, f'{x}: {phonebook_dict[x]}')
 
 
 bot.polling()
